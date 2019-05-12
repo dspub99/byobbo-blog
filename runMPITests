@@ -1,0 +1,14 @@
+#!/bin/tcsh
+
+foreach mt (mpitest_*.py)
+    echo MPITEST: $mt
+    mpiexec -n 2 $mt || exit 1
+    mpiexec -n 30 $mt || exit 1
+end
+
+echo PASSED
+
+
+    
+
+

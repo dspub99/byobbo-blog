@@ -1,0 +1,6 @@
+#!/bin/tcsh
+
+pytest -v `grep -H test_ *.py |cut -d: -f1 | sort -u`
+    
+
+
