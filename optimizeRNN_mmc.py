@@ -26,10 +26,10 @@ if __name__=="__main__":
 
     nObjIter = 3
     seed0 = None
-    nEvalsPerW = 1000
+    nEvalsPerW = 300
     sigma0 = .1
     RNNType = RNNTypes.Plain
-    NumHidden = [10]*2
+    NumHidden = [10]*4
 
     rng = np.random.RandomState(seed0)
     byobbo = BYOBBO(seed=rng.randint(9999), rnnType=RNNType, nh=NumHidden, nObjIter=nObjIter, nReport=1,
@@ -51,6 +51,7 @@ if __name__=="__main__":
         # You could reload and use it with
         #  bbo = BBO.fromDict(json_tricks.loads(open(jsonFn).read()))
         #
+        bbo = byobbo.getBBO()
         with open(jsonFn, 'w') as f:
             f.write(json_tricks.dumps(bbo.toDict()))
 
