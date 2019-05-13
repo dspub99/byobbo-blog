@@ -45,7 +45,7 @@ lint:
 
 
 clean:
-	rm -f *.o $(TARGETS) a.out core *~ *.d
+	rm -rf *.o $(TARGETS) a.out core *~ *.d gmon.out	__pycache__
 
 
 cppclean:
